@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 KUBECONFIG_FILE=/config
-#KUBECONFIG_FILE=$HOME/.kube/config
-#KUBECONFIG_FILE=$(pwd)/kubeconfig
 DEBUG=1
 K8S_TRIDENT_NS=trident
 KUBECTL=kubectl
