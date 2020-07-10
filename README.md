@@ -7,3 +7,7 @@
 Simple docker image to deploy NetApp Trident to Kubernetes cluster
 
 ```docker run -v <path-to-kubeconfig>config:/config fabianborn/k8s-trident-installer:v0.1```
+
+
+Here is a short example:
+[![asciicast](https://asciinema.org/a/gKTMvKguMYOINNOtcNxSiZCKR.svg)](https://asciinema.org/a/gKTMvKguMYOINNOtcNxSiZCKR)
