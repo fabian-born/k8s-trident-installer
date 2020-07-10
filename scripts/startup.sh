@@ -22,7 +22,7 @@ if [ -f "$KUBECONFIG_FILE" ]; then
 	writelog "KUBECONFIG found in $KUBECONFIG_FILE"
 else 
 	writelog "Use default path for KUBECONFIG"
-        unset KUBECONFIGS
+        unset KUBECONFIG
 fi
 kubectl cluster-info
 
