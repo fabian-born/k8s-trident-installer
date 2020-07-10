@@ -53,7 +53,7 @@ writelog "Download Trident..."
 
 mkdir $_STARTDIR/$TRIDENT_DOWNLOAD_FOLDER
 cd $_STARTDIR/$TRIDENT_DOWNLOAD_FOLDER
-wget $TRIDENT_DOWNLOAD_URL
+wget --no-check-certificate $TRIDENT_DOWNLOAD_URL
 writelog "`tar xfvz trident-installer-20.04.0.tar.gz`"
 cd trident-installer
 
