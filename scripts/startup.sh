@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 KUBECONFIG_FILE=/config
-DEBUG=1
+DEBUG=0
 K8S_TRIDENT_NS=trident
 KUBECTL=kubectl
 
