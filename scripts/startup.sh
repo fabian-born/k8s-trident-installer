@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#/usr/bin/env bash
 
 KUBECONFIG_FILE=/config
 DEBUG=0
