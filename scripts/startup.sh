@@ -4,9 +4,10 @@ KUBECONFIG_FILE=/config
 DEBUG=`[ -z "$DEBUG" ] && echo 0 || echo "${DEBUG}"`
 K8S_TRIDENT_NS=trident
 KUBECTL=kubectl
+TRIDENTVERSION=20.07.0
 
 _STARTDIR=$(pwd)
-TRIDENT_DOWNLOAD_URL=https://github.com/NetApp/trident/releases/download/v20.07.0/trident-installer-20.07.0.tar.gz
+TRIDENT_DOWNLOAD_URL=https://github.com/NetApp/trident/releases/download/v{$TRIDENTVERSION}/trident-installer-{$TRIDENTVERSION}.tar.gz
 TRIDENT_DOWNLOAD_FOLDER=download-tmp
 ### functions
 function writelog(){
@@ -54,7 +55,7 @@ writelog "Download Trident..."
 mkdir $_STARTDIR/$TRIDENT_DOWNLOAD_FOLDER
 cd $_STARTDIR/$TRIDENT_DOWNLOAD_FOLDER
 wget --no-check-certificate $TRIDENT_DOWNLOAD_URL
-writelog "`tar xfvz trident-installer-20.04.0.tar.gz`"
+writelog "`tar xfvz trident-installer-{$TRIDENTVERSION}.tar.gz`"
 cd trident-installer
 
 _K8SVERSION=$(($KUBECTL version --client=false --short=true | grep Server) | awk -F '[:=]'  '{print $2}') 
