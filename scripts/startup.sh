@@ -1,7 +1,7 @@
 #/usr/bin/env bash
 
 KUBECONFIG_FILE=/config
-DEBUG=1
+DEBUG=`[ -z "$DEBUG" ] && echo 0 || echo "${DEBUG}"`
 K8S_TRIDENT_NS=trident
 KUBECTL=kubectl
 TRIDENT_VERSION=20.07.0
