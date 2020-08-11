@@ -40,15 +40,6 @@ else
 	writelog "`kubectl cluster-info`"
 fi
 
-writelog "Check Namespace..."
-ns=`kubectl get namespace $K8S_TRIDENT_NS --no-headers --output=go-template={{.metadata.name}} 2>/dev/null`
-if [ -z "${ns}" ]; then
-  writelog  "	Namespace $K8S_TRIDENT_NS not found, create it new!"
-  $KUBECTL create namespace $K8S_TRIDENT_NS 2> /dev/null
-else
-  writelog "   Namespace $K8S_TRIDENT_NS found"	
-fi
-
 
 writelog "Download Trident..."
 
@@ -71,6 +62,15 @@ then
 else
         writelog " Prepare Trident Installation post K8S Version 1.6"
 	writelog " `$KUBECTL create -f deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml`"
+fi
+
+writelog "Check Namespace..."
+ns=`kubectl get namespace $K8S_TRIDENT_NS --no-headers --output=go-template={{.metadata.name}} 2>/dev/null`
+if [ -z "${ns}" ]; then
+  writelog  "   Namespace $K8S_TRIDENT_NS not found, create it new!"
+  writelog " `$KUBECTL create -f deploy/namespace.yaml`"
+else
+  writelog "   Namespace $K8S_TRIDENT_NS found"
 fi
 
 writelog " `$KUBECTL create -f deploy/bundle.yaml`"
