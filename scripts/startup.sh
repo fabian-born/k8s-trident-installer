@@ -1,13 +1,12 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 KUBECONFIG_FILE=/config
 DEBUG=`[ -z "$DEBUG" ] && echo 0 || echo "${DEBUG}"`
 K8S_TRIDENT_NS=trident
 KUBECTL=kubectl
-TRIDENT_VERSION=20.07.0
 
 _STARTDIR=$(pwd)
-TRIDENT_DOWNLOAD_URL=https://github.com/NetApp/trident/releases/download/v${TRIDENT_VERSION}/trident-installer-${TRIDENT_VERSION}.tar.gz
+TRIDENT_DOWNLOAD_URL=https://github.com/NetApp/trident/releases/download/v20.07.0/trident-installer-20.07.0.tar.gz
 TRIDENT_DOWNLOAD_FOLDER=download-tmp
 ### functions
 function writelog(){
