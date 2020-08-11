@@ -4,7 +4,7 @@ KUBECONFIG_FILE=/config
 DEBUG=0
 K8S_TRIDENT_NS=trident
 KUBECTL=kubectl
-TRIDENT_VERSION=20.04.0
+TRIDENT_VERSION=20.07.0
 
 _STARTDIR=$(pwd)
 TRIDENT_DOWNLOAD_URL=https://github.com/NetApp/trident/releases/download/v${TRIDENT_VERSION}/trident-installer-${TRIDENT_VERSION}.tar.gz
