@@ -15,6 +15,9 @@ spec:
       - name: kconfig
         mountPath: "/config"
         subPath: kubeconfig
+  env:
+    - name: DEBUG
+      value: 0
   volumes:
   - name: kconfig
     configMap:
