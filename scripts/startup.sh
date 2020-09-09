@@ -17,7 +17,7 @@ function writelog(){
 	fi
 }
 ###
-
+export KUBECONFIG=$KUBECONFIG_FILE
 if [ -f "$KUBECONFIG_FILE" ]; then
 	export KUBECONFIG=$KUBECONFIG_FILE
 	writelog "KUBECONFIG found in $KUBECONFIG_FILE"
@@ -25,6 +25,7 @@ else
 	writelog "Use default path for KUBECONFIG"
         unset KUBECONFIG
 fi
+export KUBECONFIG=$KUBECONFIG_FILE
 kubectl cluster-info
 
 writelog "Check Kubernetes Cluster Information"
