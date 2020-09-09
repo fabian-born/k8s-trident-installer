@@ -105,8 +105,11 @@ do
 done
 writelog "`$KUBECTL describe tprov trident -n trident`"
 
+writelog " Moving tridentctl to /usr/local/bin"
+cp -v tridentctl /usr/local/bin
 
 writelog " Installation finished!"
 writelog " Clean up all folder...."
 cd $_STARTDIR
 rm -rf $_STARTDIR/$TRIDENT_DOWNLOAD_FOLDER/
+pause
