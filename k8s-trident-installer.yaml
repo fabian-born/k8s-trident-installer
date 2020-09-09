@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-trident-installer
+  labels:
+    app: trident-installer
+spec:
+  containers:
+    - name: installer
+      image: fabianborn/k8s-trident-installer:latest
+      ports:
+        - containerPort: 19811
+      volumeMounts:
+      - name: kconfig
+        mountPath: "/config"
+        subPath: kubeconfig
+  volumes:
+  - name: kconfig
+    configMap:
+      name: trident-install-kubeconfig
