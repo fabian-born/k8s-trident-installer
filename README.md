@@ -5,6 +5,7 @@
 
 
 #### Now you can install the installer by using kubectl:
+
 Before you start you have create a config map and in the yaml file the following setting has to been modified:
 ````yaml
       volumeMounts:
@@ -13,6 +14,8 @@ Before you start you have create a config map and in the yaml file the following
         subPath: <name of the origin kubeconfig file>
 ```
 
+
+##### execution:
 ``` 
 kubectl create configmap trident-install-kubeconfig --from-file=$KUBECONFIG
 
