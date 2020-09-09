@@ -112,5 +112,5 @@ writelog " Installation finished!"
 writelog " Clean up all folder...."
 cd $_STARTDIR
 rm -rf $_STARTDIR/$TRIDENT_DOWNLOAD_FOLDER/
-echo "presse ENTER for finishing container"
-read EINGABE
+
+sleep infinity
