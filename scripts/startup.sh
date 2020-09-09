@@ -59,10 +59,10 @@ writelog "$_K8SVERSION"
 if [[ $_K8SVERSION < "1160"  ]]
 then
 	writelog " Prepare Trident Installation pre K8S Version 1.6"
-	writelog " `$KUBECTL create -f deploy/crds/trident.netapp.io_tridentprovisioners_crd_pre1.16.yaml`"
+	writelog " `$KUBECTL create -f deploy/crds/trident.netapp.io_tridentprovisioners_crd_pre1.16.yaml --kubeconfig=/config `"
 else
         writelog " Prepare Trident Installation post K8S Version 1.6"
-	writelog " `$KUBECTL create -f deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml`"
+	writelog " `$KUBECTL create -f deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml --kubeconfig=/config `"
 fi
 
 writelog "Check Namespace..."
@@ -92,7 +92,7 @@ do
 done
 writelog "`$KUBECTL get pods -n $K8S_TRIDENT_NS --no-headers | grep trident-operator`"
 
-writelog "`$KUBECTL create -f deploy/crds/tridentprovisioner_cr.yaml`"
+writelog "`$KUBECTL create -f deploy/crds/tridentprovisioner_cr.yaml --kubeconfig=/config`"
 
 sleep 10
 writelog "Check tprov state"
