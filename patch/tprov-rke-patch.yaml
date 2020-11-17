@@ -5,4 +5,4 @@ metadata:
   name: trident
   namespace: trident
 spec:
-  kubeletDir: "/opt/rke/var/lib/kubelet
+  kubeletDir: "/opt/rke/var/lib/kubelet"
