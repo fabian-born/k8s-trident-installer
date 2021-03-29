@@ -1,3 +1,7 @@
+deprecated: please take a look here https://github.com/fabian-born/trident-installer-addon
+
+
+
 # k8s Trident Installer
 ### Docker Image to setup NetApp Trident in a Kubernetes Cluster
 
